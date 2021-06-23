@@ -3,6 +3,8 @@ const express = require("express");
 const handlebars = require("express-handlebars");
 // const bodyParser = require("body-parser"); deprecated
 const app = express();
+const admin = require("./routes/admin");
+
 // const mongoose = require("mongoose")
 
 //Config
@@ -18,9 +20,10 @@ const app = express();
 
 
 //Routes
-    app.get("/teste", (req, res)=>{
-        res.send("teste");
+    app.get("/", (req, res)=>{
+        res.send("Página inicial")
     })
+    app.use("/admin", admin);
 
 //Others
 const PORT = 8081;
