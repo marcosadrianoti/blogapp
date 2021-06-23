@@ -18,7 +18,9 @@ const app = express();
 
 
 //Routes
-
+    app.get("/teste", (req, res)=>{
+        res.send("teste");
+    })
 
 //Others
 const PORT = 8081;
