@@ -4,6 +4,7 @@ const handlebars = require("express-handlebars");
 // const bodyParser = require("body-parser"); deprecated
 const app = express();
 const admin = require("./routes/admin");
+const path = require("path");
 
 // const mongoose = require("mongoose")
 
@@ -16,13 +17,17 @@ const admin = require("./routes/admin");
     //Handlebars
         app.engine("handlebars", handlebars({defaultLayout: "main"}));
         app.set("view engine", "handlebars");
+    //public
+        app.use(express.static(path.join(__dirname, "public")));
+        
 
 
 
 //Routes
     app.get("/", (req, res)=>{
         res.send("Página inicial")
-    })
+    });
+
     app.use("/admin", admin);
 
 //Others
