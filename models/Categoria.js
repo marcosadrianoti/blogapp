@@ -11,9 +11,9 @@ const Categoria = new Schema({
     required: true,
   },
   date: {
-      type: Date,
-      default: Date.now()
-  }
+    type: Date,
+    default: Date.now(),
+  },
 });
 
 mongoose.model("categorias", Categoria);

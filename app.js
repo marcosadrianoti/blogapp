@@ -20,7 +20,10 @@ app.set("view engine", "handlebars");
 // Mongoose
 mongoose.Promise = global.Promise;
 mongoose
-  .connect("mongodb://localhost:27017/blogapp", {useNewUrlParser: true, useUnifiedTopology: true})
+  .connect("mongodb://localhost:27017/blogapp", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(() => {
     console.log("Conectado ao Mongo");
   })
